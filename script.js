@@ -5,7 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
   if (params.has("p")) {
     // Handle error
     const p = params.get("p");
-    window.location.open("localhost:3000?p=" + p, "_self");
+
+    window.location.replace("http://localhost:3000?p=" + p);
   } else if (params.has("code")) {
     // Process the authorization code
     const code = params.get("code");
