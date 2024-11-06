@@ -2,11 +2,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const params = new URLSearchParams(window.location.search);
   const messageElement = document.getElementById("message");
 
-  if (params.has("error")) {
+  if (params.has("p")) {
     // Handle error
-    const error = params.get("error");
-    messageElement.textContent = `Error: ${error}`;
-    messageElement.style.color = "red";
+    const p = params.get("p");
+    window.location.open("localhost:3000?p=" + p, "_self");
   } else if (params.has("code")) {
     // Process the authorization code
     const code = params.get("code");
